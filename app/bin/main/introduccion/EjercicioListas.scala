@@ -13,8 +13,25 @@ class EjercicioListas {
   */
   def repetirListas(lista: List[Int], n: Int): List[List[Int]] = {
     var listaRepetida : List[List[Int]] = List()
-    //Complete el código
-    throw new UnsupportedOperationException("No implementado aún")
+    var contador : Int = 0
+    var listaAux : List[Int] = List()
+
+    if(n < 0){
+      throw new IllegalArgumentException("n debe ser mayor que 0")
+    }
+    else{
+      while( contador < lista.length){
+        for(i<- 0 until n){
+          listaAux = listaAux :+ lista(contador)
+        }
+        listaRepetida = listaRepetida :+ listaAux
+        listaAux = List.empty
+        contador += 1
+
+      }
+    }
+    return listaRepetida
+    
   }
   /*
   * Punto 3: Filtrar listas
@@ -28,7 +45,30 @@ class EjercicioListas {
   def filtrarListas(criterioIn: String, n: Int, lista: List[Int]) : List[Int] = {
     var criterio : String = criterioIn.toLowerCase()
     var listaFiltrada : List[Int] = List()
-    //Complete el código
-    throw new UnsupportedOperationException("No implementado aún")
+    var complemento = false
+
+    for(i <- 0 until lista.length ){
+      criterio match {
+        case "mayor" => complemento = lista(i) > n
+        case "menor" => complemento = lista(i) < n
+        case "mayoroigual" => complemento = lista(i) >= n
+        case "menoroigual" => complemento = lista(i) <= n
+        case "igual" => complemento = lista(i) == n
+        case "diferente" => complemento = lista(i) != n
+        case _ => complemento = false
+      }
+      if (complemento){
+          listaFiltrada = listaFiltrada :+ lista(i)
+        }
+      }
+    
+    if(listaFiltrada.isEmpty && complemento == false){
+      throw new IllegalArgumentException("El criterio no es uno de los valores válidos")
+    }
+    else{
+      return listaFiltrada
+    }
+    
   }
 }
+

@@ -6,7 +6,31 @@ package introduccion
 object App {
   def main(args: Array[String]): Unit = {
     println(greeting())
+    // var listaFactoriales : List[BigInt] = List()
+    //val objFactorial: Factorial = new Factorial()
+        //Complete el código
+     // for (i <- 0 to 10) {
+       // listaFactoriales = listaFactoriales :+ objFactorial.calculateFactorial(i)
+         // print(listaFactoriales)
+        //}
+     /*val criterioIn: String = "mayor"
+     val n: Int = 5 
+     val lista: List[Int] = List(1,2,3,4,5,6,7,8,9,10)
+      var criterio : String = criterioIn.toLowerCase()
+      var listaFiltrada : List[Int] = List()
+
+      for (i <- 0 until lista.length ){
+        if (criterio == "mayor"){
+          if ( lista(i) > n){
+            listaFiltrada = listaFiltrada :+ lista(i)
+          }
+        } 
+    }
+    
+     listaFiltrada.foreach(println)
+  */
   }
+  
 
   def greeting(): String = "Hello, world!"
 }
